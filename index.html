@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O-Hub Intelligence | Production V2</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root { --bg-dark: #020617; --card-bg: #0f172a; --accent: #38bdf8; }
+        body { background-color: var(--bg-dark); color: #f8fafc; font-family: 'Inter', sans-serif; height: 100vh; overflow: hidden; }
+        .sidebar { background-color: var(--card-bg); border-left: 1px solid rgba(255,255,255,0.05); }
+        .glass-card { background: rgba(30, 41, 59, 0.4); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.05); }
+        .input-field { background: #1e293b; border: 1px solid #334155; transition: 0.3s; }
+        .input-field:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 10px rgba(56, 189, 248, 0.1); }
+    </style>
+</head>
+<body class="flex flex-row-reverse">
+
+    <aside class="sidebar w-72 p-6 flex flex-col justify-between">
+        <div>
+            <div class="mb-10 text-center">
+                <h1 class="text-2xl font-black tracking-tighter text-sky-500 italic">O-HUB</h1>
+                <p class="text-[9px] text-slate-500 uppercase tracking-widest">Management Suite</p>
+            </div>
+            
+            <nav class="space-y-2">
+                <button onclick="nav('feed')" class="w-full text-right p-3 rounded-xl bg-sky-600/10 text-sky-400 border border-sky-500/20 flex items-center justify-between">
+                    <span class="text-sm font-bold">التدفق الموحد</span>
+                    <i class="fas fa-stream"></i>
+                </button>
+                <button onclick="nav('publish')" class="w-full text-right p-3 rounded-xl hover:bg-slate-800 text-slate-400 flex items-center justify-between transition">
+                    <span class="text-sm font-bold">نشر موحد (Posts)</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+                <button onclick="nav('reels')" class="w-full text-right p-3 rounded-xl hover:bg-slate-800 text-slate-400 flex items-center justify-between transition">
+                    <span class="text-sm font-bold">إدارة الـ Reels</span>
+                    <i class="fas fa-video"></i>
+                </button>
+            </nav>
+        </div>
+
+        <div class="p-4 glass-card rounded-2xl">
+            <p class="text-[10px] text-slate-500 mb-1">المطور المسجل:</p>
+            <p class="text-xs font-bold text-slate-200">مصطفى الصديق</p>
+            <p class="text-[9px] text-sky-600">MustafaSiddig989@gmail.com</p>
+        </div>
+    </aside>
+
+    <main class="flex-1 overflow-y-auto p-8 h-full">
+        <header class="flex justify-between items-center mb-10">
+            <div class="flex items-center gap-4">
+                <div class="h-12 w-1 bg-sky-500 rounded-full"></div>
+                <h2 id="tab-title" class="text-2xl font-bold">مركز العمليات المباشر</h2>
+            </div>
+            <div class="flex gap-4">
+                <div class="glass-card px-4 py-2 rounded-xl flex items-center gap-2">
+                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                    <span class="text-xs font-bold">WhatsApp: Connected</span>
+                </div>
+            </div>
+        </header>
+
+        <div id="view-port" class="space-y-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="glass-card p-6 rounded-3xl">
+                    <h3 class="font-bold mb-4 flex items-center gap-2"><i class="fas fa-plus-circle text-sky-500"></i> إنشاء محتوى جديد</h3>
+                    <textarea class="input-field w-full h-32 rounded-2xl p-4 text-sm mb-4" placeholder="ماذا تريد أن تنشر اليوم؟"></textarea>
+                    <div class="flex justify-between items-center">
+                        <button class="bg-slate-800 px-4 py-2 rounded-xl text-xs hover:bg-slate-700 transition"><i class="fas fa-image mr-2"></i> إضافة وسائط</button>
+                        <button class="bg-sky-600 px-8 py-2 rounded-xl text-xs font-bold hover:bg-sky-500 shadow-lg shadow-sky-500/20">نشر عبر القنوات</button>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-3xl">
+                    <h3 class="font-bold mb-4 flex items-center gap-2"><i class="fas fa-comments text-sky-500"></i> تعليقات تحتاج ردك</h3>
+                    <div class="space-y-3 opacity-50 italic text-center py-10 text-sm">
+                        <i class="fas fa-search-nodes text-3xl mb-2 block"></i>
+                        لا توجد تعليقات جديدة حالياً..
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function nav(target) {
+            // سيتم وضع منطق التنقل البرمجي هنا
+            console.log("Navigating to:", target);
+        }
+    </script>
+</body>
+</html>
