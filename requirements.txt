@@ -1,0 +1,5 @@
+pywebview==5.1
+requests==2.31.0
+pycryptodome==3.20.0
+facebook-sdk==3.1.0
+python-dotenv==1.0.1
